@@ -112,3 +112,22 @@ In this task, we built a **Multiple Linear Regression** model to predict the ser
 
 - The most positively or negatively correlated features with serum cholesterol (`chol`) were identified and can be used to understand **which health metrics most influence cholesterol levels**.
 - These insights may aid in targeted health interventions or further clinical analysis.
+
+---
+
+## Step 4.3: Principal Component Analysis (PCA)
+
+The goal of this step was to reduce the dataset’s dimensionality while retaining as much variance as possible, in preparation for unsupervised learning tasks like clustering.
+
+### Methodology
+
+- The target column (`num`) was excluded from the analysis.
+- PCA was applied to the normalized feature set using `scikit-learn`.
+- The number of components was chosen such that **95% of the variance** in the dataset was retained.
+- A plot of the **cumulative explained variance** was generated to visualize how much information is preserved as dimensions are reduced.
+
+### Results
+
+- The original dataset had **13 features**.
+- After PCA, the dimensionality was reduced to **X components** (shown in the output).
+- The resulting dataset still retains **95% of the variance**, making it suitable for downstream tasks like clustering while reducing computational complexity.
