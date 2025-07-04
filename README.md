@@ -4,7 +4,7 @@ This project analyzes the UCI Heart Disease dataset (Cleveland subset) using Pyt
 
 ---
 
-##  Step 1: Introduction
+## Introduction
 
 The aim of this project is to explore, clean, and model the **Cleveland Heart Disease dataset**, a widely used real-world clinical dataset. The dataset is sourced from the UCI Machine Learning Repository and is used to predict the presence or absence of heart disease in patients based on 13 clinical features.
 
@@ -15,7 +15,7 @@ The aim of this project is to explore, clean, and model the **Cleveland Heart Di
 
 ---
 
-##  Step 2: Dataset Reference
+##  Step 1: Dataset Reference
 
 We use the `processed.cleveland.data` file, which contains 303 instances and 14 columns (13 features + 1 target).
 
@@ -40,7 +40,7 @@ We use the `processed.cleveland.data` file, which contains 303 instances and 14 
 
 ---
 
-##  Step 3: EDA & Data Preprocessing
+##  Step 2: EDA & Data Preprocessing
 
 This step focuses on understanding and preparing the dataset for machine learning. It involves exploring the structure of the data, identifying missing values, and applying necessary transformations to clean and standardize the features.
 
@@ -78,7 +78,7 @@ Based on the findings from EDA, the following actions were taken:
 
 ---
 
-##  Step 4.1: Heart Disease Prediction
+##  Step 3.1: Heart Disease Prediction
 
 In this step, we built two supervised machine learning models — **Logistic Regression** and **Random Forest Classifier** — to predict the presence of heart disease.
 
@@ -90,7 +90,7 @@ This step demonstrated the practical use of ML models in clinical risk predictio
 
 ---
 
-##  Step 4.2: Cholesterol Level Prediction
+##  Step 3.2: Cholesterol Level Prediction
 
 In this task, we built a **Multiple Linear Regression** model to predict the serum cholesterol level (`chol`) based on the remaining 12 clinical features (excluding the target label `num` and the `chol` column itself).
 
@@ -115,7 +115,7 @@ In this task, we built a **Multiple Linear Regression** model to predict the ser
 
 ---
 
-## Step 4.3: Principal Component Analysis (PCA)
+## Step 3.3: Principal Component Analysis (PCA)
 
 The goal of this step was to reduce the dataset’s dimensionality while retaining as much variance as possible, in preparation for unsupervised learning tasks like clustering.
 
@@ -131,3 +131,23 @@ The goal of this step was to reduce the dataset’s dimensionality while retaini
 - The original dataset had **13 features**.
 - After PCA, the dimensionality was reduced to **X components** (shown in the output).
 - The resulting dataset still retains **95% of the variance**, making it suitable for downstream tasks like clustering while reducing computational complexity.
+
+---
+
+##  Step 3.4: Grouping Patients Based on Health Profiles (Clustering)
+
+In this step, we applied **K-Means Clustering** on the PCA-reduced dataset to group patients based on their health profiles.
+
+### Methodology
+
+- The PCA-reduced dataset was used as input for clustering (unsupervised).
+- The **Elbow Method** was used to evaluate the optimal number of clusters by plotting inertia scores.
+- The **Silhouette Score** was also calculated for `k = 2 to 10` to assess clustering quality.
+- Once the optimal number of clusters was selected (e.g., `k = 3`), final clustering was performed.
+- A 2D scatterplot was created using the first two principal components to visualize patient groups.
+
+### Insights
+
+- Patients were successfully grouped into **k clusters** based on shared patterns in their clinical data.
+- These clusters may represent different risk profiles or patient subtypes.
+- This grouping could support personalized treatment strategies or health monitoring systems.
