@@ -78,7 +78,7 @@ Based on the findings from EDA, the following actions were taken:
 
 ---
 
-##  Step 4: Heart Disease Prediction
+##  Step 4.1: Heart Disease Prediction
 
 In this step, we built two supervised machine learning models — **Logistic Regression** and **Random Forest Classifier** — to predict the presence of heart disease.
 
@@ -87,3 +87,28 @@ After splitting the dataset into training and test sets, both models were traine
 **Logistic Regression** achieved slightly better balanced performance across all metrics, while **Random Forest** showed strong precision.
 
 This step demonstrated the practical use of ML models in clinical risk prediction.
+
+---
+
+##  Step 4.2: Cholesterol Level Prediction
+
+In this task, we built a **Multiple Linear Regression** model to predict the serum cholesterol level (`chol`) based on the remaining 12 clinical features (excluding the target label `num` and the `chol` column itself).
+
+###  Methodology
+
+- The `chol` column was used as the **regression target**.
+- All other features were **normalized** using `StandardScaler` prior to model training.
+- The dataset was split into **training and test sets** (80/20 split).
+- A **Linear Regression model** was trained using scikit-learn.
+- A **correlation matrix** was computed and visualized with a heatmap to identify key predictors of cholesterol levels.
+
+### Results
+
+- The model provided a basic estimation of cholesterol levels based on the available features.
+- Evaluation metrics included **Mean Squared Error (MSE)** and **R² Score**.
+- A correlation heatmap revealed the **most strongly correlated features** with cholesterol.
+
+###  Key Findings
+
+- The most positively or negatively correlated features with serum cholesterol (`chol`) were identified and can be used to understand **which health metrics most influence cholesterol levels**.
+- These insights may aid in targeted health interventions or further clinical analysis.
