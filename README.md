@@ -40,7 +40,7 @@ We use the `processed.cleveland.data` file, which contains 303 instances and 14 
 
 ---
 
-## 🔍 Step 3: EDA & Data Preprocessing
+##  Step 3: EDA & Data Preprocessing
 
 This step focuses on understanding and preparing the dataset for machine learning. It involves exploring the structure of the data, identifying missing values, and applying necessary transformations to clean and standardize the features.
 
@@ -67,11 +67,23 @@ Based on the findings from EDA, the following actions were taken:
 - Converted the target column `num` to binary:
   - `0` remained as `0` (no heart disease)
   - Values `1`, `2`, `3`, and `4` were replaced with `1` (presence of heart disease)
+- **Normalized all feature columns** using `StandardScaler` to scale them to a standard range (mean = 0, std = 1), ensuring models aren't biased by differing feature scales.
 
-
-### Outcome
+###  Outcome
 
 - All missing values were successfully handled.
 - The target variable was transformed into a binary classification label.
+- All features were standardized for optimal model performance.
 - The dataset is now clean and ready for machine learning modeling tasks in the next steps.
 
+---
+
+##  Step 4: Heart Disease Prediction
+
+In this step, we built two supervised machine learning models — **Logistic Regression** and **Random Forest Classifier** — to predict the presence of heart disease.
+
+After splitting the dataset into training and test sets, both models were trained and evaluated using standard classification metrics including **Accuracy**, **Precision**, **Recall**, **F1-Score**, and **Confusion Matrix**.
+
+**Logistic Regression** achieved slightly better balanced performance across all metrics, while **Random Forest** showed strong precision.
+
+This step demonstrated the practical use of ML models in clinical risk prediction.
